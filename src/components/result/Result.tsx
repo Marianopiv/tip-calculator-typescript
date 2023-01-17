@@ -1,6 +1,12 @@
 import React, { useEffect } from "react";
 import config from "./config.json";
-const Result = ({ calculus, people, reset }) => {
+
+interface Props {
+  calculus: number;
+  people: number;
+  reset: () => void;
+}
+const Result = ({ calculus, people, reset }:Props) => {
   useEffect(() => {}, [calculus]); 
 
   return (
