@@ -50,7 +50,7 @@ const Home = () => {
                   type="number"
                   onBlur={(e) => handleBlur(e, "Bill can't be 0")}
                   name="bill"
-                  id=""
+                  value={bill}
                 />
                 <p className="text-center text-xs ml-3 text-red-500">
                   {errors.bill && <p className="md:p-3">{errors.bill}</p>}
@@ -70,6 +70,7 @@ const Home = () => {
                       disabled={bill === 0}
                       onClick={() => getPercentage(item)}
                       name={"percentage"}
+                      value={percentage}
                       key={index}
                       className={`w-28 md:w-22 h-10 bg-custom-950 font-bold text-md tracking-widest active:bg-green2-950 text-white ${
                         percentage === Number(item) ? "bg-green2-950" : ""
@@ -86,7 +87,7 @@ const Home = () => {
                       className=" w-28 h-10 bg-pink-50 focus:ring  focus:outline-none rounded-md focus:ring-green2-950"
                       type="number"
                       name="percentage"
-                      id=""
+                      value={percentage}
                       max={bill}
                       maxLength={bill}
                     />
@@ -112,7 +113,7 @@ const Home = () => {
                   onChange={handleChange}
                   type="number"
                   name="people"
-                  id=""
+                  value={people}
                   onBlur={(e) => handleBlur(e, "Number of people can't be 0")}
                 />
               <p className="text-center text-xs ml-2 md:mx-2 z-50 text-red-500">

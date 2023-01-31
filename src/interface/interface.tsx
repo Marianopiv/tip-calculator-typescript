@@ -1,12 +1,13 @@
 export interface State {
-    bill: number;
+    bill: number|string;
+    percentage: number|string;
+    people:number|string;
     total?: number;
   }
 export interface Errors {
     [key: string]:any;
-    bill?: number;
-    people?: number;
-    percentage?: number;
+    bill?: number|string;
+    people?: number|string;
+    percentage?: number|string;
     total?:number;
   }
-  

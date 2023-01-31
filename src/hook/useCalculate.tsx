@@ -1,15 +1,16 @@
 import React, { useRef, useState } from "react";
+import { numbers } from "../config/config";
 import { State, Errors } from "../interface/interface";
 
 const useCalculate = () => {
-  const [state, setState] = useState({
-    bill: 0,
-    percentage: 0,
-    people: 0,
+  const [state, setState] = useState<State>({
+    bill: "",
+    percentage: "",
+    people: "",
     total: 0,
   });
 
-  const formulario = useRef(null);
+  const formulario = useRef<HTMLFormElement>(null);
 
   const [custom, setCustom] = useState(false);
 
@@ -19,7 +20,7 @@ const useCalculate = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     if (Number(value) > 0) {
-      setState({ ...state, [name]: value });
+      setState({ ...state, [name]: Number(value) });
     }
   };
 
@@ -33,7 +34,14 @@ const useCalculate = () => {
 
     delete copyState["total"];
 
-    if (Object.values(copyState).every((item) => item !== 0)) {
+    if (
+      Object.values(copyState)
+        .slice(0, 2)
+        .every((item) => typeof item === "number")
+    ) {
+      const bill = Number(state.bill);
+      const percentage = Number(state.percentage);
+
       setState((prevState) => ({
         ...prevState,
         total: (bill * percentage) / 100,
@@ -59,22 +67,22 @@ const useCalculate = () => {
   };
 
   const reset = () => {
-    const copy:Errors = { ...state };
+    const copy: Errors = { ...state };
     Object.keys(copy).forEach((key) => {
       copy[key] = 0;
     });
 
     setState({
-    bill: 0,
-    percentage: 0,
-    people: 0,
-    total: 0,
-  });
+      bill: "",
+      percentage: "",
+      people: "",
+      total: 0,
+    });
+    setCustom(false);
 
     formulario?.current?.reset();
   };
 
-  
   return {
     handleChange,
     bill,
