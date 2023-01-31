@@ -89,7 +89,6 @@ const Home = () => {
                       name="percentage"
                       value={percentage}
                       max={bill}
-                      maxLength={bill}
                     />
                   ) : (
                     <button

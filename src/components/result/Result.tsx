@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import config from "./config.json";
 
 interface Props {
-  calculus: number;
-  people: number;
+  calculus: number|undefined
+  people: number|string;
   reset: () => void;
 }
 const Result = ({ calculus, people, reset }:Props) => {
@@ -31,7 +31,7 @@ const Result = ({ calculus, people, reset }:Props) => {
           </div>
           <div className="flex justify-items-end">
             <p className="text-3xl md:text-5xl font-bold text-green2-950">
-              $ {calculus != 0 && calculus / people}
+              $ {calculus != 0 && Number(calculus) / Number(people)}
             </p>
           </div>
         </div>
