@@ -36,7 +36,7 @@ const Home = () => {
         <form
           onSubmit={handleSubmit}
           ref={formulario}
-          className="md:rounded-md flex flex-col md:flex-row w-96 md:w-3/4 md:bg-white md:p-10 mt-4 max-w-xs sm:max-w-sm"
+          className="md:rounded-md flex flex-col md:flex-row w-96 md:w-3/4 dark:bg-white md:bg-white md:p-10 mt-4 max-w-xs sm:max-w-sm"
         >
           <div className="flex-col">
             <h3 >Bill</h3>
