@@ -36,7 +36,7 @@ const Home = () => {
         <form
           onSubmit={handleSubmit}
           ref={formulario}
-          className="md:rounded-md flex flex-col md:flex-row w-96 md:w-3/4 dark:bg-white md:bg-white md:p-10 mt-4 max-w-xs sm:max-w-sm"
+          className="md:rounded-md flex flex-col md:flex-row w-96 md:w-3/4 dark:bg-white md:bg-white md:p-10 mt-4 max-w-xs sm:max-w-4xl"
         >
           <div className="flex-col">
             <h3 >Bill</h3>
@@ -102,7 +102,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="md:h-24  w-96  pt-10">
+            <div className="md:h-24  sm:w-96  pt-10">
               <h3 className={`${grayStyle} mb-2`}>Number of People</h3>
               <div className="bg-pink-50 p-2 py-3 flex justify-around items-center rounded-md">
                 <img className="w-6 h-4 rounded-full" src={icon} alt="" />
