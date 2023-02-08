@@ -4,6 +4,7 @@ import useCalculate from '../hook/useCalculate.js';
 import {numbers,grayStyle} from "../config/config.js"
 import icon from "../assets/icon.png"
 import Result from '../components/result/Result.js';
+import "./home.css"
 const Home = () => {
 
   const {
@@ -30,12 +31,12 @@ const Home = () => {
 
   return (
     <>
-      <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col items-center justify-center w-screen pl-4">
         <NavBar />
         <form
           onSubmit={handleSubmit}
           ref={formulario}
-          className="md:rounded-md flex flex-col md:flex-row w-96 md:w-3/4 md:bg-white md:p-10 mt-4"
+          className="md:rounded-md flex flex-col md:flex-row w-96 md:w-3/4 md:bg-white md:p-10 mt-4 max-w-xs sm:max-w-sm"
         >
           <div className="flex-col">
             <h3 >Bill</h3>
@@ -72,7 +73,7 @@ const Home = () => {
                       name={"percentage"}
                       value={percentage}
                       key={index}
-                      className={`w-28 md:w-22 h-10 bg-custom-950 font-bold text-md tracking-widest active:bg-green2-950 text-white ${
+                      className={` sm:w-28 md:w-22 h-10 bg-custom-950 font-bold text-md tracking-widest active:bg-green2-950 text-white ${
                         percentage === Number(item) ? "bg-green2-950" : ""
                       }${bill === 0 ? "cursor-not-allowed" : ""}`}
                     >
